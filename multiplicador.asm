@@ -1,24 +1,19 @@
 .data 
- num1: db #01h
- num2: db #01h
+ num1: db #00h
+ num2: db #04h
  cont: db #00h
  result: db #00h
 .enddata
 
 INICIO:	
  lda num2
- jz ZERO_CASE
+ jz FIM
 
  lda num1
- jz ZERO_CASE
+ jz FIM
 
  add cont
  sta cont
- jmp MULT_LOOP
-
- ZERO_CASE:
-  sta cont
-  jmp FIM
 
  MULT_LOOP:
   lda num2
